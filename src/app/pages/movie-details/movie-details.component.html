@@ -1,0 +1,21 @@
+<nav>
+    <a routerLink="/">
+        <mat-icon aria-hidden="false">arrow_back_ios</mat-icon> Back
+    </a>
+</nav>
+<div class="movie-wrapper" *ngIf="(movie$ | async) as movie">
+    <div class="movie-poster">
+        <img *ngIf="movie?.poster_path" [src]="'http://image.tmdb.org/t/p/w185/' + movie?.poster_path" [alt]="movie?.original_title"/>
+        <img *ngIf="!movie?.poster_path" src="/src/assets/images/no-poster.png" [alt]="movie?.original_title"/>
+    </div>
+    <div class="movie-details">
+        <h1>{{movie?.original_title}}</h1>
+        <i>Release year: {{movie?.release_date | date : 'yyyy'}}</i>
+        <p>
+            {{movie?.overview}}
+        </p>
+        <div class="rating" *ngIf="movie?.vote_average">
+            <ngx-stars [readonly]="true" [size]="5" [initialStars]="movie?.vote_average / 2" [color]="'gold'"></ngx-stars>
+        </div>
+    </div>
+</div>

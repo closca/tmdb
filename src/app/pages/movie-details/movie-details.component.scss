@@ -1,0 +1,57 @@
+
+nav {
+    display: none;
+}
+
+.movie-wrapper {
+    padding: 10px;
+    display: flex;
+    color: var(--font-color);
+
+    .movie-details {
+        flex: 1;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+
+        h1 {
+            margin: 0;
+        }
+
+        .rating{
+            ngx-stars {
+                float: right;
+            }
+
+            ::ng-deep {
+                .stars-line {
+                    > div {
+                        span {
+                            height: 35px!important;
+                            width: 35px!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: 767px) {
+    .movie-wrapper {
+        img {
+            width: 80px;
+        }
+    }
+
+    nav {
+        display: flex;
+        a {
+            display: flex;
+            padding: 5px 0;
+            text-decoration: none;
+            color: var(--font-color);
+        }
+    }
+}

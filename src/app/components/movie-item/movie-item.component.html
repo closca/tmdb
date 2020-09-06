@@ -1,0 +1,6 @@
+<div class="movie-item" (click)="selectMovie()">
+    <img *ngIf="movie?.poster_path" [src]="'http://image.tmdb.org/t/p/w185/' + movie?.poster_path" [alt]="movie?.original_title"/>
+    <img *ngIf="!movie?.poster_path" src="/assets/images/no-poster.png" [alt]="movie?.original_title"/>
+    <span>{{movie?.original_title}}</span>
+    <mat-icon aria-hidden="false" *ngIf="selectedMovieId === movie?.id">play_arrow</mat-icon>
+</div>

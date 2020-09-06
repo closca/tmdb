@@ -1,0 +1,33 @@
+
+.movie-item {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 5px;
+    padding: 5px 0;
+    color: var(--font-color);
+    cursor: pointer;
+    position: relative;
+    padding-right: 24px;
+
+    img {
+        width: 50px;
+    }
+
+    span {
+        padding-left: 10px;
+    }
+
+    mat-icon {
+        position: absolute;
+        right: 0;
+        top: calc(50% - 12px);
+    }
+}
+
+@media all and (max-width: 767px) {
+    .movie-item {
+        img {
+            width: 20px;
+        }
+    }
+}

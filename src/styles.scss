@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import './assets/scss/theme';
+@import './assets/scss/layout';
+@import './assets/scss/typography';
+
+* {
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 0 !important;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    @each $name, $color in $theme-light {
+        --#{$name}: #{$color};
+    }
+
+    &.darkMode {
+        @each $name, $color in $theme-dark {
+            --#{$name}: #{$color};
+        }
+    }
+
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+}
