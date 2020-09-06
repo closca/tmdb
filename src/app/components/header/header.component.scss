@@ -38,6 +38,7 @@ header {
         border-radius: 22px;
         overflow: hidden;
         padding: 5px 10px;
+        align-items: center;
 
         input[type="search"] {
             border: 0;
@@ -75,7 +76,8 @@ header {
 
                 .search-control {
                     input[type="search"] {
-                        min-width: 50px;
+                        min-width: 150px;
+                        width: 150px;
                     }
                 }
             }
